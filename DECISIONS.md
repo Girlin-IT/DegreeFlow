@@ -27,3 +27,8 @@ Status is manual by default, you set it to in progress/submitted yourself. It au
 
 ## Week 3 (data modelling) — Weighted average formula
 sum(grade × weight) ÷ sum(weight), only counting assignments that actually have a grade in. Updates live as grades come in. This is basically how real module weighting works so it should make sense to anyone looking at it.
+
+## Week 3 — Password hashing: bcrypt
+Reasoning: plain-text passwords are a non-starter, if the database is ever accessed by someone who shouldn't see it, every user's actual password is exposed, and since people reuse passwords, that risk extends beyond just this app. bcrypt hashes passwords one-way, so the real password is never stored, only a hash. It's also deliberately slow, unlike fast hashes like SHA-256, which makes brute-forcing stolen hashes impractical, and it automatically salts each password so identical passwords don't produce identical hashes.
+
+Considered argon2 as an alternative, it's generally seen as current best practice and won a password-hashing competition in 2015. Went with bcrypt instead because it's simpler to set up correctly under time pressure and is still considered secure and well-tested (in use since 1999). Not choosing it because argon2 is flawed, just a pragmatic call given the dissertation timeline.
