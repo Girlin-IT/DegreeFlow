@@ -44,17 +44,34 @@ node index.js
 
 ## Features
 
-### Completed
+### Setup
 - [x] Project setup (Node.js, Express, MongoDB via Mongoose)
 - [x] MongoDB Atlas connection established
+- [x] bcrypt installed
 
-### In progress
-- [ ] User schema and authentication (signup/login)
-- [ ] Module schema
+### Models
+- [x] User schema with password hashing
+- [x] Module schema
 - [ ] Assignment schema
+
+### Backend
+- [ ] Signup and login routes
+- [ ] Module routes
+- [ ] Assignment routes
 - [ ] Weighted grade average calculation (per module)
 - [ ] Auto-status update for overdue assignments
-- [ ] Dashboard view
+
+### Frontend
+- [ ] Login and signup pages
+- [ ] Dashboard
+- [ ] Assignment tracker
+- [ ] Grade calculator
+
+### Evaluation (scope to be confirmed)
+- [ ] Unit testing
+- [ ] Security
+- [ ] Scalability
+- [ ] Peer testing
 
 ### Deferred (future development, post-dissertation)
 - [ ] Rule-based assignment priority suggestions
