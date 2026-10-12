@@ -52,7 +52,7 @@ node index.js
 ### Models
 - [x] User schema with password hashing
 - [x] Module schema
-- [ ] Assignment schema
+- [x] Assignment schema
 
 ### Backend
 - [ ] Signup and login routes
