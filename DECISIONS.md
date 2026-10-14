@@ -28,7 +28,22 @@ Status is manual by default, you set it to in progress/submitted yourself. It au
 ## Week 3 (data modelling) — Weighted average formula
 sum(grade × weight) ÷ sum(weight), only counting assignments that actually have a grade in. Updates live as grades come in. This is basically how real module weighting works so it should make sense to anyone looking at it.
 
-## Week 3 — Password hashing: bcrypt
+## Week 4 — Password hashing: bcrypt
 Reasoning: plain-text passwords are a non-starter, if the database is ever accessed by someone who shouldn't see it, every user's actual password is exposed, and since people reuse passwords, that risk extends beyond just this app. bcrypt hashes passwords one-way, so the real password is never stored, only a hash. It's also deliberately slow, unlike fast hashes like SHA-256, which makes brute-forcing stolen hashes impractical, and it automatically salts each password so identical passwords don't produce identical hashes.
 
 I considered argon2 as an alternative, it's generally seen as current best practice and won a password-hashing competition in 2015. I went with bcrypt instead because it's simpler to set up correctly under time pressure and is still considered secure and well-tested (in use since 1999). I have not chosen it because argon2 is flawed, it's just a sensible call given the dissertation timeline.
+
+## Week 4: Modules and assignments link to each other by ID
+Each module stores the ID of the user who owns it, and each assignment stores the ID of its module, so it goes user, then module, then assignment. That keeps them as separate collections like I decided before, and it's MongoDB's version of a foreign key in SQL.
+
+## Week 4: Module average is worked out, not stored
+There's no average or grade field on Module. The average gets calculated from its assignments whenever it's needed. If I stored it, it would go out of date every time a grade changed, and I'd have two places to keep correct instead of one.
+
+## Week 4: Assignment fields, limits and what's optional
+Weight and grade are both limited to 0 to 100, since they're percentages. Grade isn't required, because a new assignment hasn't been marked yet. Status can only be one of five set values and starts as "Not started", so nobody can save a made-up status. Module code is optional too, because not every module has one worth entering. Credits are left out because the grade calculator works from assignment weights.
+
+## Week 4: Objectives, waiting on Andy
+Andy said my old objectives (lit review, building, evaluating, analysing) would be done for any dissertation, so they don't count as objectives. He suggested scalability, security and testing, and said I can use peers to test the app. I wasn't sure if these replace my old ones or sit alongside them, so I'm asking him instead of guessing. I'm leaning towards focusing on scalability, security and testing and leaving out the library comparison, but nothing is final until he replies. I'll update this entry when he does.
+
+## Week 5: Atlas network access
+Hit a connection error when my VPN was on, because Atlas only lets in IP addresses on its allowed list. I could have switched to "allow access from anywhere" to stop it happening again, but that lets any address try to connect to my database. Keeping it to my own IP and turning the VPN off when I work on this is a bit more hassle but safer.
