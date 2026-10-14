@@ -45,5 +45,4 @@ Weight and grade are both limited to 0 to 100, since they're percentages. Grade 
 ## Week 4: Objectives, waiting on Andy
 Andy said my old objectives (lit review, building, evaluating, analysing) would be done for any dissertation, so they don't count as objectives. He suggested scalability, security and testing, and said I can use peers to test the app. I wasn't sure if these replace my old ones or sit alongside them, so I'm asking him instead of guessing. I'm leaning towards focusing on scalability, security and testing and leaving out the library comparison, but nothing is final until he replies. I'll update this entry when he does.
 
-## Week 5: Atlas network access
-Hit a connection error when my VPN was on, because Atlas only lets in IP addresses on its allowed list. I could have switched to "allow access from anywhere" to stop it happening again, but that lets any address try to connect to my database. Keeping it to my own IP and turning the VPN off when I work on this is a bit more hassle but safer.
+
