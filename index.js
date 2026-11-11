@@ -1,5 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
+const authRoutes = require('./routes/authRoutes');
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected successfully'))
@@ -14,6 +15,16 @@ const express = require('express');
 
 // the express app
 const app = express();
+
+// Pseudocode:
+// before any route runs, if a request arrives with JSON in its body,
+// read it and put it on req.body so our routes can use it
+
+// Lets Express read JSON sent in the request body (needed for signup and login)
+app.use(express.json());
+
+// Everything in authRoutes starts with /api/auth, so signup lives at /api/auth/signup
+app.use('/api/auth', authRoutes);
 
 // if there is a port defined in .env, use it, otherwise use 3000
 const port = process.env.PORT || 3000;

@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // Pseudocode:
-// right before a user gets saved to the database:
+//   right before a user gets saved to the database:
 //   if the password hasn't been touched, skip this and carry on (it's already hashed)
 //   otherwise, scramble the password with bcrypt (this adds the random salt for us)
 //   swap the plain password for the scrambled one
