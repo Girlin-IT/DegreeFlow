@@ -45,4 +45,16 @@ Weight and grade are both limited to 0 to 100, since they're percentages. Grade 
 ## Week 4: Objectives, waiting on Andy
 Andy said my old objectives (lit review, building, evaluating, analysing) would be done for any dissertation, so they don't count as objectives. He suggested scalability, security and testing, and said I can use peers to test the app. I wasn't sure if these replace my old ones or sit alongside them, so I'm asking him instead of guessing. I'm leaning towards focusing on scalability, security and testing and leaving out the library comparison, but nothing is final until he replies. I'll update this entry when he does.
 
+## Week 6-7: Research question and objectives reworked after Andy's feedback
 
+
+**Decision:** I changed the aim, research question and objectives so the research is about Node.js and its libraries, with Degree Flow as the proof-of-concept used to test it. This is from the feedback received from Andy.
+
+**Why:** My first question was about the app itself. Andy said that as it's a software project, the question needs to sit on the technology, in this case Node.js libraries, scalability and security. He also said Degree Flow should be introduced before it appears in the question.
+
+**What changed:**
+- Three objectives now: build the prototype, evaluate security (OWASP), evaluate scalability and maintainability.
+- Python comparison removed. A PHP comparison is optional.
+- Student user testing is not one of the objectives any more. Still to confirm with Andy whether he wants any peer testing alongside.
+
+**Impact on the build:** None so far. The same app gets built, but the evaluation now matters more, so bcrypt, validation and tests are things I need to record and measure, not just do.

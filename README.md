@@ -1,10 +1,17 @@
-# Degree Flow
+## Research
 
-A web application that helps students track assignments, their weighting and due dates, and calculates a running weighted grade average per module.
+**Aim:** 
+To design, develop and evaluate a working prototype of Degree Flow, a student assignment tracker and weighted grade calculator, in order to investigate how effectively Node.js and its library ecosystem support secure and scalable web prototype development.
 
-## Problem it solves
+**Research question:** To what extent does Node.js and its library ecosystem support the development of a secure and scalable web application, using Degree Flow, a student assignment tracker and weighted grade calculator, as a proof-of-concept system?
 
-Students juggling multiple modules often rely on scattered handbooks and spreadsheets to track assignment weightings and estimate where they stand overall. Existing tools tend to be either basic to-do lists with no grade awareness, or grade calculators with no workload tracking, nothing combines both. Degree Flow aims to close that gap by giving students live visibility into both their workload and their running grade as results come in.
+**Objectives:**
+1. Design and develop Degree Flow as a working prototype using Node.js, Express and MongoDB, providing functionality for assignment tracking and weighted grade calculation.
+
+2. Evaluate the security of the application by implementing and testing controls such as password hashing, authentication and input validation, with reference to relevant OWASP web security risks.
+
+3. Evaluate the scalability and maintainability of the application through unit testing, basic load testing and analysis of how easily the system can be extended with additional features.
+
 
 ## Tech stack
 
