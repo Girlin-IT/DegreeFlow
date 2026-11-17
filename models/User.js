@@ -44,6 +44,16 @@ userSchema.pre('save', async function () {
 });
 
 // Pseudocode:
+// take the password someone just typed in
+// ask bcrypt whether it matches the scrambled one we stored
+// give back true or false
+
+// Lets any user say "does this typed password match mine?"
+userSchema.methods.checkPassword = async function (typedPassword) {
+    return await bcrypt.compare(typedPassword, this.password);
+};
+
+// Pseudocode:
 // turn the blueprint into a real model called "User"
 // share it so other files (routes, controllers) can use it
 

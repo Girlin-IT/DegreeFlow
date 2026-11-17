@@ -58,3 +58,17 @@ Andy said my old objectives (lit review, building, evaluating, analysing) would 
 - Student user testing is not one of the objectives any more. Still to confirm with Andy whether he wants any peer testing alongside.
 
 **Impact on the build:** None so far. The same app gets built, but the evaluation now matters more, so bcrypt, validation and tests are things I need to record and measure, not just do.
+
+## Week 10: Signup and login design
+
+**Decision:** Signup and login are split into a route file (`routes/authRoutes.js`) and a controller (`controllers/authController.js`), mounted at `/api/auth`. The route only points requests at the controller, and the controller does the work.
+
+**Why:** It keeps `index.js` small and makes new features easier to add, which matters for my maintainability objective.
+
+**Decision:** Different failures get different status codes: 400 for missing fields, 401 for bad login details, 409 for an email that already exists, and 500 only for unexpected errors. Before this, every failure came back as a vague 500, which I found by testing it.
+
+**Decision:** Login gives the same message ("Invalid email or password") whether the email or the password was wrong. Signup says clearly when an email is taken.
+
+**Trade-off:** The signup message tells someone which emails have accounts (account enumeration). I kept it clear for the prototype, and a production version might use a vaguer message. To discuss in my security evaluation.
+
+**Known gap:** Login does not remember the user afterwards. A token or session is the next piece.
